@@ -1,20 +1,14 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import './Header.css';
 
-// The Header creates links that can be used to navigate
-// between routes.
 const Header = () => (
-  <header>
-    <nav>
-      <ul>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/roster'>Roster</Link></li>
-        <li><Link to='/schedule'>Schedule</Link></li>
-        <li><Link to='/units'>Units</Link></li>
-        <li><Link to='/todayslesson'>Todayslesson</Link></li>
-      </ul>
-    </nav>
-  </header>
-)
+<div class="topnav">
+  <a class="active" href='/'>Home</a>
+  <a href='/roster'>Roster</a>
+  <a href='/schedule'>Schedule</a>
+  <a href='/units'>Unit</a>
+  <a href='/todayslesson'>Today's Lesson</a>
+</div>
+);
 
-export default Header
+export default Header;
