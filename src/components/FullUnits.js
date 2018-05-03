@@ -8,7 +8,7 @@ const FullUnits = () => (
       {
         ApiUnits.all().map(p => (
           <li key={p.id}>
-            <Link to={`/units/${p.nombre}`}>{p.nombre}</Link>
+            <Link to={`/units/${p.id}`}>{p.nombre}</Link>
           </li>
         ))
       }

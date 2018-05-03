@@ -4,7 +4,7 @@ import ApiTodayslessons from '../apiTodayslessons'
 
 const Todayslesson = () => {
   const lesson = ApiTodayslessons.getRandom() //get(n)
-   if (!lesson) {
+  if(!lesson) {
     return <div><h2>No lessons available at the moment </h2></div>
   }
   return (
@@ -16,25 +16,3 @@ const Todayslesson = () => {
 }
 
 export default Todayslesson
-
-
-/*<div>
-    <ul>
-      {
-        ApiTodayslessons.all().map(p => (
-          <div>
-            <li key={p.id}>
-              <h2>
-              {p.name}
-              </h2>
-              {p.description}
-            </li>
-            <h2>
-              {n}
-            </h2>
-          </div>
-        ))
-      }
-    </ul>
-  </div>
-*/

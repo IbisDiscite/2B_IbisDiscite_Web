@@ -16,12 +16,16 @@ const ApiTodayslessons = {
         "description": "Avoid saying what you mean, usually because it is uncomfortable"
       }
     ],
+  
   all: function() { return this.allTodayslessons},
+  
   get: function(id) {
     const isTodayslesson = p => p.id === id
     return this.allTodayslessons.find(isTodayslesson)
   },
+  
   size: function() { return this.allTodayslessons.length},
+  
   getRandom: function(){
     const n = Math.floor((Math.random() * this.size()) + 1);
     return this.get(n);

@@ -8,6 +8,7 @@ const ApiUnits = {
     { id: 6, nombre: "Pronouns"}
   ],
   all: function() { return this.allUnits},
+  
   get: function(id) {
     const isUnit = p => p.id === id
     return this.allUnits.find(isUnit)

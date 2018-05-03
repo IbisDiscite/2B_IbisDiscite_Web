@@ -121,14 +121,17 @@ const ApiExamples = {
         "contenido": "Example number 3 of Pronouns unit!"
       }
   ],
+  
   all: function() { return this.allExamples},
+  
   get: function(id) {
     const isExample = p => p.id === id
     return this.allExamples.find(isExample)
   },
+  
   getUnits: function(unit_id) {
     const isExample = p => p.unit_id === unit_id
-    return this.allExamples.find(isExample)
+    return this.allExamples.filter(isExample)
   }
 }
 
