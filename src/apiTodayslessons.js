@@ -20,6 +20,11 @@ const ApiTodayslessons = {
   get: function(id) {
     const isTodayslesson = p => p.id === id
     return this.allTodayslessons.find(isTodayslesson)
+  },
+  size: function() { return this.allTodayslessons.length},
+  getRandom: function(){
+    const n = Math.floor((Math.random() * this.size()) + 1);
+    return this.get(n);
   }
 }
 
