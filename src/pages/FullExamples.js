@@ -1,5 +1,5 @@
 import React from 'react'
-import ApiExamples from '../apiExamples'
+import ApiExamples from '../apis/apiExamples'
 
 const FullExamples = (props) => {
   const examples = ApiExamples.getUnits( parseInt(props.match.params.id, 10));

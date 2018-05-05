@@ -1,6 +1,6 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import ApiTodayslessons from '../apiTodayslessons'
+import ApiTodayslessons from '../apis/apiTodayslessons'
 
 const Todayslesson = () => {
   const lesson = ApiTodayslessons.getRandom() //get(n)
