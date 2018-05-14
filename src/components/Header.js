@@ -6,7 +6,6 @@ const Header = () => (
   <a class="active" href='/'>Home</a>
   <a href='/units'>Units</a>
   <a href='/todayslesson'>Today's Lesson</a>
-  <a href='/exercises'>Exercises</a>
 </div>
 );
 
