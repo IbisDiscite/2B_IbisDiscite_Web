@@ -32,7 +32,7 @@ class FullExamples extends Component{
     );
   }
   
-  render(){
+  render(props){
     
     if(this.state.isLoading){
       return (<h2>The unit does not have examples available</h2>)
@@ -41,7 +41,7 @@ class FullExamples extends Component{
       <div>
       <ul>
         {
-          this.state.dataSource.map(p => (
+          this.state.dataSource.filter((e) => e.unit_id === parseInt(this.props.match.params.id, 10)).map(p => (
             <li key={p.id}>
               {p.contenido}
             </li>
