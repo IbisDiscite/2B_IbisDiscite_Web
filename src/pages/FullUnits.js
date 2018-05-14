@@ -2,7 +2,6 @@ import React, { Component }  from 'react'
 import { Link } from 'react-router-dom'
 import GraphQLRequest from '../graphQLUtils';
 
-import ApiUnits from '../apis/apiUnits'
 
 class FullUnits extends Component{
   constructor(props){
