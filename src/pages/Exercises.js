@@ -1,12 +1,10 @@
-import React from 'react'
-import ApiExercises from '../apis/apiExercises'
+import React, { Component }  from 'react'
+import GraphQLRequest from '../graphQLUtils';
 
-const Todayslesson = () => {
-  return (
-    <div>
-      <h2>Cooming Soon</h2>
-    </div>
-  )
+class Exercises extends Component{
+  render(){
+    return (<h2>There are not exercises available</h2>)
+  }
 }
 
-export default Todayslesson
+export default Exercises;
