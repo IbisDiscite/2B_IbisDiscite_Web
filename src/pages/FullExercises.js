@@ -1,9 +1,9 @@
 import React, { Component }  from 'react'
 
-class Exercises extends Component{
+class FullExercises extends Component{
   render(){
     return (<h2>There are not exercises available</h2>)
   }
 }
 
-export default Exercises;
+export default FullExercises;

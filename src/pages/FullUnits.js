@@ -40,7 +40,7 @@ class FullUnits extends Component{
         {
           this.state.dataSource.map(p => (
             <li key={p.id}>
-              <Link to={`/units/${p.id}`}>{p.nombre}</Link>
+              {p.nombre}  =  <Link to={`/units/examples/${p.id}`}> examples</Link>  | <Link to={`/units/exercises/${p.id}`}> exercises </Link>
             </li>
           ))
         }
