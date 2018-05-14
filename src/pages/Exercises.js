@@ -1,5 +1,4 @@
 import React, { Component }  from 'react'
-import GraphQLRequest from '../graphQLUtils';
 
 class Exercises extends Component{
   render(){
