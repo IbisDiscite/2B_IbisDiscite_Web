@@ -5,9 +5,6 @@ class Todayslesson extends Component{
   constructor(props){
     super(props)
     this.state = {
-        id: null,
-        name: "",
-        description: "",
         dataSource: [{
         "id": 1,
         "name": "A blessing in disguise",
