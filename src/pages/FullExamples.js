@@ -1,6 +1,64 @@
-import React from 'react'
-import ApiExamples from '../apis/apiExamples'
+import React, { Component }  from 'react'
+import GraphQLRequest from '../graphQLUtils';
 
+class FullExamples extends Component{
+  constructor(props){
+    super(props)
+    this.state = {
+        dataSource: [{
+          "id": 25,
+          "unit_id": 1,
+          "contenido": "Example number 0 of Grammar unit!"
+        }],
+        isLoading: true
+    }
+    
+    let request = `
+    query{
+      allExamples{
+        id
+        unit_id
+        contenido
+      }
+    }`;
+    
+    GraphQLRequest(request,
+      data => {
+        this.setState({
+          isLoading: false,
+          dataSource: data.allExamples
+        })
+      }
+    );
+  }
+  
+  render(){
+    
+    if(this.state.isLoading){
+      return (<h2>The unit does not have examples available</h2>)
+    }
+    return(
+      <div>
+      <ul>
+        {
+          this.state.dataSource.map(p => (
+            <li key={p.id}>
+              {p.contenido}
+            </li>
+          ))
+        }
+      </ul>
+      </div>
+    )
+  }
+}
+
+export default FullExamples
+
+
+/*
+
+import ApiExamples from '../apis/apiExamples'
 const FullExamples = (props) => {
   const examples = ApiExamples.getUnits( parseInt(props.match.params.id, 10));
   if(examples.length===0){
@@ -21,3 +79,4 @@ const FullExamples = (props) => {
   )
 }
 export default FullExamples
+*/
