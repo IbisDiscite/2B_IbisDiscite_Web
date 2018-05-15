@@ -6,20 +6,12 @@ class FullExercises extends Component{
   constructor(props){
     super(props)
     this.state = {
-        dataSource: [{
-          "id": 1,
-          "opc1": "opc1",
-          "opc2": "opc2",
-          "leccion": 1,
-          "enunciado": "enunciado",
-          "respuesta": "rta"
-        }],
-        isLoading: true
+        isLoading: 1
     }
     
     let request = `
     query{
-      allExercises{
+      exerciseByLeccion(leccion: ${this.props.match.params.id}){
         id
         opc1
         opc2
@@ -31,18 +23,26 @@ class FullExercises extends Component{
     
     GraphQLRequest(request,
       data => {
-        this.setState({
-          isLoading: false,
-          dataSource: data.allExercises
-        })
+        if (data.exerciseByLeccion.length === 0){
+          this.setState({isLoading: 2})
+        }
+        else{
+          this.setState({
+            isLoading: 0,
+            dataSource: data.exerciseByLeccion
+          })
+        }
       }
     );
   }
   
   
   render(props){
+    if(this.state.isLoading === 2){
+      return (<h2>There are not exercises available in this unit</h2>)
+    }
     if(this.state.isLoading){
-      return (<h2>There are not exercises available</h2>)
+      return (<h2>Loading...</h2>)
     }
     return(
       <div>
@@ -50,18 +50,18 @@ class FullExercises extends Component{
         {
           this.state.dataSource.filter((e) => e.leccion === parseInt(this.props.match.params.id, 10)).map(p => (
             <li key={p.id}>
-              <h3>{p.enunciado}</h3>
+              <h3>{p.id}. {p.enunciado}</h3>
               <select name={p.enunciado}>
-              <option> -- </option>
-              <option>{p.opc1}</option>
-              <option>{p.opc2}</option>
+              <option value="0"> -- </option>
+              <option value="1">{p.opc1}</option>
+              <option value="2">{p.opc2}</option>
               </select>
-              <h>{p.id}{p.enunciado}</h> 
             </li>
           ))
         }
       </ul>
       </div>
+      
     )
   }
 }
