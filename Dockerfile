@@ -9,6 +9,6 @@ RUN npm install
 
 ADD . /web-ms
 
-EXPOSE 4003
+EXPOSE 3100
 
 CMD ["npm","start"]
