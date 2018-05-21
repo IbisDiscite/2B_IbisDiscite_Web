@@ -10,3 +10,5 @@ RUN npm install
 
 # Start app
 CMD ["npm", "start"]
+
+EXPOSE 4040
