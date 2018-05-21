@@ -1,12 +1,46 @@
 import React from 'react';
 import './Header.css';
+import {
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink } from 'reactstrap';
 
-const Header = () => (
-<div class="topnav">
-  <a class="active" href='/'>Home</a>
-  <a href='/units'>Units</a>
-  <a href='/todayslesson'>Today's Lesson</a>
-</div>
-);
+export default class Example extends React.Component {
+    constructor(props) {
+        super(props);
 
-export default Header;
+        this.toggle = this.toggle.bind(this);
+        this.state = {
+            isOpen: false
+        };
+    }
+    toggle() {
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
+    }
+    render() {
+        return (
+            <div>
+                <Navbar color="dark" dark expand="md">
+                    <NavbarBrand href="/">Ibis Discite</NavbarBrand>
+                    <NavbarToggler onClick={this.toggle} />
+                    <Collapse isOpen={this.state.isOpen} navbar>
+                        <Nav className="ml-auto" navbar>
+                            <NavItem>
+                                <NavLink href="/units">Units</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="/todayslesson">Today's Lesson</NavLink>
+                            </NavItem>
+                        </Nav>
+                    </Collapse>
+                </Navbar>
+            </div>
+        );
+    }
+}
