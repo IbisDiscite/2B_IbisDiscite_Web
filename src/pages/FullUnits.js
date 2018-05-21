@@ -44,9 +44,9 @@ class FullUnits extends Component{
             <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }} >
               <CardTitle className={"text-center"}>{p.nombre} </CardTitle>
               <CardText className={"text-center"}>
-                  <Button  href={`/units/examples/${p.id}`}> examples </Button>
+                  <Button  href={`/units/examples/${p.id}`}> Examples </Button>
                   <a> - </a>
-                  <Button  href={`/units/exercises/${p.id}`}> exercises </Button>
+                  <Button  href={`/units/exercises/${p.id}`}> Exercises </Button>
               </CardText>
             </Card>
           ))
