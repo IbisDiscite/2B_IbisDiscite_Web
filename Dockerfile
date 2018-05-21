@@ -8,6 +8,10 @@ WORKDIR /git/app-web
 COPY package.json /git/app-web
 RUN npm install
 
+COPY . /git/app-web
+
+RUN npm run build --production
+
 # Start app
 CMD ["npm", "start"]
 
