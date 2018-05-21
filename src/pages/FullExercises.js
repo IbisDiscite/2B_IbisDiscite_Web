@@ -1,6 +1,6 @@
 import React, { Component }  from 'react'
 import GraphQLRequest from '../graphQLUtils';
-
+import { Card, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 class FullExercises extends Component{
   
   constructor(props){
@@ -46,22 +46,23 @@ class FullExercises extends Component{
     }
     return(
       <div>
-      <ul>
+        <Form >
         {
           this.state.dataSource.filter((e) => e.leccion === parseInt(this.props.match.params.id, 10)).map(p => (
-            <li key={p.id}>
-              <h3>{p.id}. {p.enunciado}</h3>
-              <select name={p.enunciado}>
-              <option value="0"> -- </option>
-              <option value="1">{p.opc1}</option>
-              <option value="2">{p.opc2}</option>
-              </select>
-            </li>
+            <FormGroup>
+              <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333'}}>
+              <Label for="exampleSelect">{p.id}. {p.enunciado}</Label>
+                <select name={p.enunciado}>
+                <option value="0"> -- </option>
+                <option value="1">{p.opc1}</option>
+                <option value="2">{p.opc2}</option>
+                </select>
+              </Card>
+            </FormGroup>
           ))
         }
-      </ul>
+        </Form>
       </div>
-      
     )
   }
 }

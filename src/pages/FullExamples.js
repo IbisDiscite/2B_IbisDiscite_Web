@@ -1,6 +1,6 @@
 import React, { Component }  from 'react'
 import GraphQLRequest from '../graphQLUtils';
-
+import { Card, CardTitle, CardText, CardColumns, CardDeck} from 'reactstrap';
 class FullExamples extends Component{
   constructor(props){
     super(props)
@@ -39,15 +39,17 @@ class FullExamples extends Component{
     }
     return(
       <div>
-      <ul>
-        {
-          this.state.dataSource.filter((e) => e.unit_id === parseInt(this.props.match.params.id, 10)).map(p => (
-            <li key={p.id}>
-              {p.contenido}
-            </li>
-          ))
-        }
-      </ul>
+        <CardColumns>
+            {
+              this.state.dataSource.filter((e) => e.unit_id === parseInt(this.props.match.params.id, 10)).map(p => (
+
+                <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
+                    <CardTitle className={"text-center"}>Example {p.id} </CardTitle>
+                    <CardText>{p.contenido}</CardText>
+                </Card>
+              ))
+            }
+        </CardColumns>
       </div>
     )
   }
