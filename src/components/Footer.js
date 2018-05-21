@@ -1,44 +1,30 @@
 import React from 'react'
-
-var style = {
-    backgroundColor: "#000158",
-    borderTop: "1px solid #E7E7E7",
-    textAlign: "center",
-    padding: "16px",
-    position: "fixed",
-    left: "0",
-    bottom: "0",
-    height: "120px",
-    width: "100%",
-}
-
-var phantom = {
-  display: 'block',
-  padding: '20px',
-  height: '60px',
-  width: '100%',
-}
-
-var text = {
-    color: "white",
-    height: '60px',
-    
-}
-
 function Footer({ children }) {
     return (
-        <div>
-            <div style={phantom} />
-            <div style={style}>
-                { children }
-                <p style={text}>Contact Us:
-                	<li>Nicolas Sastoque:jnsastoquee@unal.edu.co</li>
-                	<li>Pedro Berrio:pcberriop@unal.edu.co</li>
-                	<li>David Rodriguez:dafrodriguezro@unal.edu.co</li>
-                	<li>Sergio Gil:sagilm@unal.edu.co</li>
-                	<li>John Hernandez:joahernandezca@unal.edu.co</li></p>
+        <footer className="container py-5">
+            <div className="row">
+                <div className="col-2 col-md">
+                    <small className="d-block mb-3 text-muted">&copy; 2018</small>
+                    <a className="text-muted" >Universida Nacional de Colombia</a>
+                </div>
+                <div className="col-4 col-md">
+                    <h5>Ibis Discite</h5>
+                    <ul className="list-unstyled ">
+                        <li><a className="text-muted" >David Felipe Rodriguez Rodriguez</a></li>
+                        <li><a className="text-muted" >John Alexander Hernandez Carrero</a></li>
+                        <li><a className="text-muted" >Pedro Camilo Berrio Pinzon</a></li>
+                        <li><a className="text-muted" >Sergio Alexander Gil Medina</a></li>
+                        <li><a className="text-muted" >Juan Nicolas Sastoque Espinosa</a></li>
+                    </ul>
+                </div>
+                <div className="col-4 col-md">
+                    <h5>Software Architecture</h5>
+                    <ul className="list-unstyled text-small">
+                        <li><a className="text-muted" >Jeisson Andrés Vergara Vargas</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </footer>
     )
 }
 

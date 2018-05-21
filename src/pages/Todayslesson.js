@@ -40,10 +40,12 @@ class Todayslesson extends Component{
       return (<h2>No lessons available at the moment</h2>)
     }
     return(
-      <div>
-      <h2>{this.state.dataSource[this.state.n].name}</h2>
-      {this.state.dataSource[this.state.n].description}
-      </div>
+        <section className="jumbotron text-center">
+            <div className="container">
+                <h2 class="jumbotron-heading">{this.state.dataSource[this.state.n].name}</h2>
+                {this.state.dataSource[this.state.n].description}
+            </div>
+        </section>
     )
   }
 }

@@ -1,6 +1,7 @@
 import React, { Component }  from 'react'
 import { Link } from 'react-router-dom'
 import GraphQLRequest from '../graphQLUtils';
+import { Card, CardTitle, CardText, CardColumns, Button, CardDeck} from 'reactstrap';
 
 
 class FullUnits extends Component{
@@ -36,15 +37,21 @@ class FullUnits extends Component{
     }
     return(
       <div>
-      <ul>
+      <CardColumns>
         {
           this.state.dataSource.map(p => (
-            <li key={p.id}>
-              {p.nombre}  =  <Link to={`/units/examples/${p.id}`}> examples</Link>  | <Link to={`/units/exercises/${p.id}`}> exercises </Link>
-            </li>
+
+            <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }} >
+              <CardTitle className={"text-center"}>{p.nombre} </CardTitle>
+              <CardText className={"text-center"}>
+                  <Button  href={`/units/examples/${p.id}`}> Examples </Button>
+                  <a> - </a>
+                  <Button  href={`/units/exercises/${p.id}`}> Exercises </Button>
+              </CardText>
+            </Card>
           ))
         }
-      </ul>
+      </CardColumns>
       </div>
     )
   }
