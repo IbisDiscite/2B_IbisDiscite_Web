@@ -15,6 +15,8 @@ class FullExercises extends Component{
         id
         opc1
         opc2
+        opc3
+        opc4
         leccion
         enunciado
         respuesta
