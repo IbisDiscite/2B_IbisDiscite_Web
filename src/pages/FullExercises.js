@@ -56,6 +56,8 @@ class FullExercises extends Component{
                 <option value="0"> -- </option>
                 <option value="1">{p.opc1}</option>
                 <option value="2">{p.opc2}</option>
+                <option value="3">{p.opc3}</option>
+                <option value="4">{p.opc4}</option>
                 </select>
               </Card>
             </FormGroup>
