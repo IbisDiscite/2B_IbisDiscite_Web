@@ -16,7 +16,6 @@ class FullExercises extends Component{
         opc1
         opc2
         opc3
-        opc4
         leccion
         enunciado
         respuesta
@@ -57,9 +56,8 @@ class FullExercises extends Component{
                 <select name={p.enunciado}>
                 <option value="0"> -- </option>
                 <option value="1">{p.opc1}</option>
-                <option value="2">{p.opc2}</option>
+                <option value="2">{p.opc2}</option>>
                 <option value="3">{p.opc3}</option>
-                <option value="4">{p.opc4}</option>
                 </select>
               </Card>
             </FormGroup>

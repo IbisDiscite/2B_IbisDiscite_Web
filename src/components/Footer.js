@@ -18,7 +18,7 @@ function Footer({ children }) {
                     </ul>
                 </div>
                 <div className="col-4 col-md">
-                    <h5>Arquitectura de computadores</h5>
+                    <h5>Software Architecture</h5>
                     <ul className="list-unstyled text-small">
                         <li><a className="text-muted" >Jeisson Andrés Vergara Vargas</a></li>
                     </ul>
