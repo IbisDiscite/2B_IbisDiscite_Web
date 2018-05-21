@@ -2,7 +2,6 @@
 FROM node:9.6.1
 
 # Create app directory
-RUN mkdir /git/app-web
 WORKDIR /git/app-web
 
 # Install app dependencies
