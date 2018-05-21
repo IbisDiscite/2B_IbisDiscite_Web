@@ -2,6 +2,7 @@ version: '2'
 services:
   web-ms:
     image: web-ms
+    build: .
     command: bash -c "npm install && sleep 40 && npm start"
     ports:
       - "3100:3100"
