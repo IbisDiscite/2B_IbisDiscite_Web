@@ -1,6 +1,6 @@
 import React, { Component }  from 'react'
 import GraphQLRequest from '../graphQLUtils';
-import { Card, CardTitle, CardText, CardColumns, CardDeck} from 'reactstrap';
+import { Card, CardTitle, CardText, CardColumns} from 'reactstrap';
 class FullExamples extends Component{
   constructor(props){
     super(props)

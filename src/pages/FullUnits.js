@@ -1,7 +1,6 @@
 import React, { Component }  from 'react'
-import { Link } from 'react-router-dom'
 import GraphQLRequest from '../graphQLUtils';
-import { Card, CardTitle, CardText, CardColumns, Button, CardDeck} from 'reactstrap';
+import { Card, CardTitle, CardText, CardColumns, Button, } from 'reactstrap';
 
 
 class FullUnits extends Component{

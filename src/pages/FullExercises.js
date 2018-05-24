@@ -1,5 +1,4 @@
 import React, { Component }  from 'react'
-import ReactDOM from 'react-dom'
 import GraphQLRequest from '../graphQLUtils';
 import { Card, Form, FormGroup, Label, Button,CardDeck } from 'reactstrap';
 var Style = {
@@ -73,7 +72,6 @@ class FullExercises extends Component{
               {
                   this.state.dataSource.filter((e) => e.leccion === parseInt(this.props.match.params.id, 10)).map(p => (
                       <FormGroup row>
-                          <CardDeck>
                               <Card body inverse style={{backgroundColor: '#333', borderColor: '#333'}}>
                                   <Label for="exampleSelect">{p.id}. {p.enunciado}</Label>
                                   <select value={this.state.value} onChange={this.handleChange} name="option">
@@ -87,7 +85,6 @@ class FullExercises extends Component{
                                   <Button type="submit" value="Submit">Submit</Button>
 
                               </Card>
-                          </CardDeck>
                       </FormGroup>
                   ))
               }
