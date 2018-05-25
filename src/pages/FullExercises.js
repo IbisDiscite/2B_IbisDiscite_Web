@@ -1,6 +1,7 @@
 import React, { Component }  from 'react'
 import GraphQLRequest from '../graphQLUtils';
 import { Card, Form, FormGroup, Label, Button,CardDeck } from 'reactstrap';
+import Header from '../components/Header'
 var Style = {
     alignItems: 'center'
 };
@@ -43,19 +44,21 @@ class FullExercises extends Component{
         }
       }
     );
+    
   }
 
     handleChange = (event)=> {
         this.setState({
-            [event.target.name]:event.target.value
+            [event.target.name]:event.target.value,
         });
     }
 
     handleSubmit(event) {
-      if(this.state.answer == this.state.value){
+      console.log(this.state)
+      if(this.state.option === this.state.resp){
           alert('Correct ');
       }else {
-          alert('idiot is: ' + this.state.answer);
+          alert('Ops, you made a mistake. The answer is: ' + this.state.resp);
       }
         event.preventDefault();
     }
@@ -80,10 +83,8 @@ class FullExercises extends Component{
                                       <option value={p.opc2}>{p.opc2}</option>
                                       <option value={p.opc3}>{p.opc3}</option>
                                       <option value={p.opc4}>{p.opc4}</option>
-                                      <div className="d-none"><a type="text" name="answer" value={p.respuesta}/></div>
                                   </select>
-                                  <Button type="submit" value="Submit">Submit</Button>
-
+                                  <Button type="submit" value="Submit" onClick={()=> {this.setState({resp: p.respuesta})}}>Submit</Button>
                               </Card>
                       </FormGroup>
                   ))

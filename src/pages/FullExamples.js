@@ -1,6 +1,7 @@
 import React, { Component }  from 'react'
 import GraphQLRequest from '../graphQLUtils';
 import { Card, CardTitle, CardText, CardColumns} from 'reactstrap';
+import Header from '../components/Header'
 class FullExamples extends Component{
   constructor(props){
     super(props)

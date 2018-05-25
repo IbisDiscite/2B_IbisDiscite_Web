@@ -27,8 +27,7 @@ export default class Example extends React.Component {
         return (
             <div>
                 <Navbar color="dark" dark expand="md">
-                    <NavbarBrand href="/Home">Ibis Discite
-                        <img width="30" height="30" src={"LogoIbis.ico"} /></NavbarBrand>
+                    <NavbarBrand href="/Home">Ibis Discite</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>

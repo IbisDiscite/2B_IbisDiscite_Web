@@ -1,7 +1,7 @@
 import React, { Component }  from 'react'
 import GraphQLRequest from '../graphQLUtils';
 import { Card, CardTitle, CardText, CardColumns, Button, } from 'reactstrap';
-
+import Header from '../components/Header'
 
 class FullUnits extends Component{
   constructor(props){

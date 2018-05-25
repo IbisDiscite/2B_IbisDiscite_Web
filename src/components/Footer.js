@@ -5,7 +5,7 @@ function Footer({ children }) {
             <div className="row">
                 <div className="col-2 col-md">
                     <small className="d-block mb-3 text-muted">&copy; 2018</small>
-                    <a className="text-muted" >Universida Nacional de Colombia</a>
+                    <a className="text-muted" >Universidad Nacional de Colombia</a>
                 </div>
                 <div className="col-4 col-md">
                     <h5>Ibis Discite</h5>
